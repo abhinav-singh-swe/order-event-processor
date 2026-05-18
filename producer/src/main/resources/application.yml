@@ -1,0 +1,21 @@
+# Glean Generated Code
+server:
+  port: 8080
+
+spring:
+  application:
+    name: order-event-processor-producer
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+
+app:
+  aws:
+    region: ${AWS_REGION:ap-south-1}
+  sqs:
+    queue-url: ${ORDER_QUEUE_URL:http://localhost:4566/000000000000/orders}
+  s3:
+    audit-bucket: ${ORDER_AUDIT_BUCKET:order-audit-local}
